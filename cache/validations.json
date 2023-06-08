@@ -1,0 +1,1021 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:VRFConsumerBaseV2": {
+        "src": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:97",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "rawFulfillRandomWords(uint256,uint256[])"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "VRFConsumerBaseV2",
+            "src": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:104"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "vrfCoordinator",
+            "src": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:99"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol:VRFCoordinatorV2Interface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "getRequestConfig()",
+          "requestRandomWords(bytes32,uint64,uint16,uint32,uint32)",
+          "createSubscription()",
+          "getSubscription(uint64)",
+          "requestSubscriptionOwnerTransfer(uint64,address)",
+          "acceptSubscriptionOwnerTransfer(uint64)",
+          "addConsumer(uint64,address)",
+          "removeConsumer(uint64,address)",
+          "cancelSubscription(uint64,address)",
+          "pendingRequestExists(uint64)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/access/Ownable.sol:Ownable": {
+        "src": "@openzeppelin/contracts/access/Ownable.sol:20",
+        "inherit": [
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:IERC20Permit": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+          "nonces(address)",
+          "DOMAIN_SEPARATOR()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:19",
+        "version": {
+          "withMetadata": "be18f6d47b1781862bba293cad382a2802a2d606bf5038e3e9e92630264eac42",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "b351e8e4dacb087bfc4915eeed639d7e9ab4902028f058c6c730035424ad237d",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/utils/math/SafeMath.sol:SafeMath": {
+        "src": "@openzeppelin/contracts/utils/math/SafeMath.sol:16",
+        "version": {
+          "withMetadata": "f05bc75a112d02acec46ed8b003c0869bf140e9cebaa7038f43dacb968f663bf",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/Lottery.sol:Lottery": {
+        "src": "contracts/Lottery.sol:11",
+        "version": {
+          "withMetadata": "ec81b7f521c3469ee24747d8af43e071820b011623c9cdb358b1f7c0eea02225",
+          "withoutMetadata": "7c0fa3f36cf20fc9fb517a78fbac3b28634330859c82414b4d54e397cc8c46b6",
+          "linkedWithoutMetadata": "7c0fa3f36cf20fc9fb517a78fbac3b28634330859c82414b4d54e397cc8c46b6"
+        },
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:VRFConsumerBaseV2",
+          "@openzeppelin/contracts/access/Ownable.sol:Ownable",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20",
+          "@openzeppelin/contracts/utils/math/SafeMath.sol:SafeMath"
+        ],
+        "methods": [
+          "()",
+          "request()",
+          "setCatcoin(address)",
+          "setWallet(address)",
+          "start(uint256,uint256,uint256)",
+          "join(uint256)",
+          "end(uint256)",
+          "see(uint256)",
+          "stake()",
+          "withdraw()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Lottery",
+            "src": "contracts/Lottery.sol:42"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "VRFCoordinatorAddar",
+            "src": "contracts/Lottery.sol:33"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "keyHash",
+            "src": "contracts/Lottery.sol:34"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "subId",
+            "src": "contracts/Lottery.sol:35"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "requestConfirmations",
+            "src": "contracts/Lottery.sol:36"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "callbackGasLimit",
+            "src": "contracts/Lottery.sol:37"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "numWords",
+            "src": "contracts/Lottery.sol:38"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            },
+            {
+              "label": "Catcoin",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:17"
+            },
+            {
+              "label": "wallet",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:18"
+            },
+            {
+              "label": "eventId",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:25"
+            },
+            {
+              "label": "user",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:26"
+            },
+            {
+              "label": "projects",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_array(t_struct(Project)1455_storage)dyn_storage",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:27"
+            },
+            {
+              "label": "userStakeBool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:28"
+            },
+            {
+              "label": "COORDINATOR",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(VRFCoordinatorV2Interface)153",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:32"
+            },
+            {
+              "label": "VRFCoordinatorAddar",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_address",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:33"
+            },
+            {
+              "label": "keyHash",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_bytes32",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:34"
+            },
+            {
+              "label": "subId",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint64",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:35"
+            },
+            {
+              "label": "requestConfirmations",
+              "offset": 8,
+              "slot": "10",
+              "type": "t_uint16",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:36"
+            },
+            {
+              "label": "callbackGasLimit",
+              "offset": 10,
+              "slot": "10",
+              "type": "t_uint32",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:37"
+            },
+            {
+              "label": "numWords",
+              "offset": 14,
+              "slot": "10",
+              "type": "t_uint32",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:38"
+            },
+            {
+              "label": "requestId",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_uint256",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:39"
+            },
+            {
+              "label": "randomWord",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_uint256",
+              "contract": "Lottery",
+              "src": "contracts/Lottery.sol:40"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Project)1455_storage)dyn_storage": {
+              "label": "struct Lottery.Project[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_contract(VRFCoordinatorV2Interface)153": {
+              "label": "contract VRFCoordinatorV2Interface",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Project)1455_storage": {
+              "label": "struct Lottery.Project",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "timeStart",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "timeEnd",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "user",
+                  "type": "t_array(t_address)dyn_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "eventId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_uint16": {
+              "label": "uint16",
+              "numberOfBytes": "2"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint32": {
+              "label": "uint32",
+              "numberOfBytes": "4"
+            },
+            "t_uint64": {
+              "label": "uint64",
+              "numberOfBytes": "8"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    },
+    {
+      "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:VRFConsumerBaseV2": {
+        "src": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:97",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "rawFulfillRandomWords(uint256,uint256[])"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "VRFConsumerBaseV2",
+            "src": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:104"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "vrfCoordinator",
+            "src": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:99"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol:VRFCoordinatorV2Interface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "getRequestConfig()",
+          "requestRandomWords(bytes32,uint64,uint16,uint32,uint32)",
+          "createSubscription()",
+          "getSubscription(uint64)",
+          "requestSubscriptionOwnerTransfer(uint64,address)",
+          "acceptSubscriptionOwnerTransfer(uint64)",
+          "addConsumer(uint64,address)",
+          "removeConsumer(uint64,address)",
+          "cancelSubscription(uint64,address)",
+          "pendingRequestExists(uint64)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/access/Ownable.sol:Ownable": {
+        "src": "@openzeppelin/contracts/access/Ownable.sol:20",
+        "inherit": [
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:IERC20Permit": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+          "nonces(address)",
+          "DOMAIN_SEPARATOR()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:19",
+        "version": {
+          "withMetadata": "be18f6d47b1781862bba293cad382a2802a2d606bf5038e3e9e92630264eac42",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "b351e8e4dacb087bfc4915eeed639d7e9ab4902028f058c6c730035424ad237d",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "@openzeppelin/contracts/utils/math/SafeMath.sol:SafeMath": {
+        "src": "@openzeppelin/contracts/utils/math/SafeMath.sol:16",
+        "version": {
+          "withMetadata": "f05bc75a112d02acec46ed8b003c0869bf140e9cebaa7038f43dacb968f663bf",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/lottery .sol:lottery": {
+        "src": "contracts/lottery .sol:11",
+        "version": {
+          "withMetadata": "a8b42e3004145860a45f06989e7e296305bbd4ed35a011faba2a106d3d09f47c",
+          "withoutMetadata": "7c0fa3f36cf20fc9fb517a78fbac3b28634330859c82414b4d54e397cc8c46b6",
+          "linkedWithoutMetadata": "7c0fa3f36cf20fc9fb517a78fbac3b28634330859c82414b4d54e397cc8c46b6"
+        },
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol:VRFConsumerBaseV2",
+          "@openzeppelin/contracts/access/Ownable.sol:Ownable",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20",
+          "@openzeppelin/contracts/utils/math/SafeMath.sol:SafeMath"
+        ],
+        "methods": [
+          "()",
+          "request()",
+          "setCatcoin(address)",
+          "setWallet(address)",
+          "start(uint256,uint256,uint256)",
+          "join(uint256)",
+          "end(uint256)",
+          "see(uint256)",
+          "stake()",
+          "withdraw()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "lottery",
+            "src": "contracts/lottery .sol:42"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "VRFCoordinatorAddar",
+            "src": "contracts/lottery .sol:33"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "keyHash",
+            "src": "contracts/lottery .sol:34"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "subId",
+            "src": "contracts/lottery .sol:35"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "requestConfirmations",
+            "src": "contracts/lottery .sol:36"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "callbackGasLimit",
+            "src": "contracts/lottery .sol:37"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "numWords",
+            "src": "contracts/lottery .sol:38"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            },
+            {
+              "label": "Catcoin",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:17"
+            },
+            {
+              "label": "wallet",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:18"
+            },
+            {
+              "label": "eventId",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:25"
+            },
+            {
+              "label": "user",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:26"
+            },
+            {
+              "label": "projects",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_array(t_struct(Project)1455_storage)dyn_storage",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:27"
+            },
+            {
+              "label": "userStakeBool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:28"
+            },
+            {
+              "label": "COORDINATOR",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(VRFCoordinatorV2Interface)153",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:32"
+            },
+            {
+              "label": "VRFCoordinatorAddar",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_address",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:33"
+            },
+            {
+              "label": "keyHash",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_bytes32",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:34"
+            },
+            {
+              "label": "subId",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint64",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:35"
+            },
+            {
+              "label": "requestConfirmations",
+              "offset": 8,
+              "slot": "10",
+              "type": "t_uint16",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:36"
+            },
+            {
+              "label": "callbackGasLimit",
+              "offset": 10,
+              "slot": "10",
+              "type": "t_uint32",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:37"
+            },
+            {
+              "label": "numWords",
+              "offset": 14,
+              "slot": "10",
+              "type": "t_uint32",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:38"
+            },
+            {
+              "label": "requestId",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_uint256",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:39"
+            },
+            {
+              "label": "randomWord",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_uint256",
+              "contract": "lottery",
+              "src": "contracts/lottery .sol:40"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Project)1455_storage)dyn_storage": {
+              "label": "struct lottery.Project[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_contract(VRFCoordinatorV2Interface)153": {
+              "label": "contract VRFCoordinatorV2Interface",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Project)1455_storage": {
+              "label": "struct lottery.Project",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "timeStart",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "timeEnd",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "user",
+                  "type": "t_array(t_address)dyn_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "eventId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_uint16": {
+              "label": "uint16",
+              "numberOfBytes": "2"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint32": {
+              "label": "uint32",
+              "numberOfBytes": "4"
+            },
+            "t_uint64": {
+              "label": "uint64",
+              "numberOfBytes": "8"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    }
+  ]
+}
